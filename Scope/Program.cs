@@ -10,17 +10,14 @@ namespace Scope
     {
         static void Main(string[] args)
         {
-            SayHello("English");
-            SayHello("French");
-            SayHello("German");
-            SayHello("yes");
+            ShowOff();
 
             Console.ReadLine();
         }
 
         static void SayHello(string language)
         {
-            Console.WriteLine(language);
+            Console.Write($"You can say hello in {language} by saying: ");
 
             switch (language)
             {
@@ -37,7 +34,16 @@ namespace Scope
                     Console.WriteLine("I don't know that language");
                     break;
             }
+        }
 
+        static void ShowOff()
+        {
+            List<string> languageList = new List<string> { "English", "French", "German", "undefined" };
+
+            foreach (string language in languageList)
+            {
+                SayHello(language);
+            }
         }
     }
 }
